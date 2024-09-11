@@ -1,0 +1,13 @@
+.swal2-popup {
+    font-family:'Poppins', Arial, Helvetica, sans-serif !important;
+  }
+
+.no-border{
+    border: 0 !important;
+}
+
+
+.custom-title-class{
+    color:#2BC48B !important;
+    font-size: 1.6em !important;
+}
