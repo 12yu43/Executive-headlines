@@ -15,9 +15,9 @@ export default function Magazine({ magazineData }) {
                 <div className="row">
                     <div className="col-md-4">
                         <div className="mt-100 pt-50 text-white w-100 d-none d-md-block">
-                            <h1 className="text-white ml-0"> <span style={{ color:"red"}}>Business Magazine</span> </h1>
+                            <h1 className="text-white ml-0"> <span style={{ color:"red",fontSize:"1.8rem"}}>Business Magazine</span> </h1>
                             <p style={{
-                                fontSize: "25px"
+                                fontSize: "20px"
                             }}>
                                 Inspiring stories, instructive interviews and life changing strategies.
                             </p>

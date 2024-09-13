@@ -7,7 +7,7 @@ export default function StartupInsights({ startupInsightData }) {
     return (
         <div className="row ">
 
-            <div className="col-lg-8 col-12 mb-50">
+            <div className="col-lg-8 col-12 mb-50 d-flex">
 
 
                 <div className="post-block-wrapper">
@@ -94,7 +94,7 @@ export default function StartupInsights({ startupInsightData }) {
             </div>
 
 
-            <div className="col-lg-4 col-12 mb-50">
+            <div className="col-lg-4 col-12 mb-50 d-flex">
                 <div className="row">
 
 
@@ -107,7 +107,7 @@ export default function StartupInsights({ startupInsightData }) {
                             <div className="head life-style-head">
 
 
-                                <h4 className="title">Startup Insights</h4>
+                                <h4 className="title my-1">Startup Insights</h4>
 
                             </div>
 

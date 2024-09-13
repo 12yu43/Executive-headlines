@@ -9,7 +9,7 @@ import 'swiper/css/navigation';
 export default function CompanyLogo({ data }) {
 
     return (
-        <div className="container mb-50">
+        <div className="container">
             <div className="post-block-wrapper mb-50">
 
 
@@ -33,11 +33,11 @@ export default function CompanyLogo({ data }) {
 
 
 
-                <div className="instagram-section section">
+                <div className="instagram-section section p-2">
                     <div>
 
 
-                        <div className="m-2 d-flex">
+                        <div className="m-2 d-flex ">
                             <Swiper
                                 slidesPerView={6}
                                 spaceBetween={5}

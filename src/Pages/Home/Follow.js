@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Follow() {
     return (
-        <div className="single-sidebar col-lg-12 col-md-6 col-12">
+        <div className="single-sidebar col-lg-12 col-md-6 col-12 d-flex">
 
 
             <div className="sidebar-block-wrapper">

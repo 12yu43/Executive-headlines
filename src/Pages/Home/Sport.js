@@ -6,7 +6,7 @@ import { Endpoints } from '../../API/Endpoints';
 export default function Sport({ pageType, data, category }) {
 
     return (
-        <div className="col-lg-4 col-md-6 col-12 mb-50">
+        <div className="col-lg-4 col-md-6 col-12 mb-50 d-flex">
             <div className="post-block-wrapper">
                 <div className={pageType === "Sports" ? "head video-head" : "head video-head"}  >
                     <h4 className="title">{pageType}</h4>
