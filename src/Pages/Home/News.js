@@ -6,7 +6,7 @@ export default function News({ pageName, item }) {
     return (
         <>
             {item?.length > 0 ?
-                <div className="col-lg-4 col-md-6 col-12 mb-50">
+                <div className="col-lg-4 col-md-6 col-12 mb-50 d-flex">
                     <div className="post-block-wrapper">
                         <div className={pageName === "Techonology News" ? "head video-head" : pageName === "Business News" ? "head video-head" : "head video-head"}>
                             <h4 className="title">{pageName}</h4>
@@ -25,7 +25,7 @@ export default function News({ pageName, item }) {
                                                         <img src={Endpoints.ImageUrl + item.images} alt={item.image_alt} className="news_image" />
                                                     </Link>
 
-                                                    <div className="content">
+                                                    <div className="">
 
                                                         <h5 className="title"><Link to={pageName === "Techonology News" ? item?.cat_slug.replace(/\s+/g, '-').toLowerCase() + "/" + item?.url : pageName === "Business News" ? "cxo/" + item?.url : item?.cat_slug.replace(/&/g, '').replace(/\s+/g, '-').toLowerCase() + "/" + item?.url}>{item.title?.length > 30 ? item?.title?.substring(0, 30) + "..." : item.title}</Link></h5>
 

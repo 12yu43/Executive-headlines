@@ -5,7 +5,7 @@ import { Endpoints } from '../../API/Endpoints';
 export default function NewNews({ pageType, data, category }) {
 
     return (
-        <div className="col-lg-4 col-md-6 col-12 mb-50">
+        <div className="col-lg-4 col-md-6 col-12  d-flex">
 
 
             <div className="post-block-wrapper">

@@ -1,59 +1,75 @@
-import React, { useState } from 'react';
-import { CommonAPi } from '../../API/CommonApi';
-import { Endpoints } from '../../API/Endpoints';
+import React, { useState } from "react";
 import Swal from "sweetalert2";
 
 export default function Contact() {
-    const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
 
-    const handleSubmit = async () => {
-        // e.preventdefault()
-        let data = {
-            email: email
-        }
-        try {
-            let resp = await CommonAPi(Endpoints.ContactUs, data);
-            if (resp && resp.status === true) {
-                setEmail("");
-                Swal.fire({
-                    text: resp.message,
-                    icon: "success"
-                });
-            }
-        }
-        catch (e) {
-            if (e && e.response && e.response.data && e.response.data.message) {
-                console.log(e.response.data.message)
-            }
-        }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const data = {
+      service_id: "service_2f9u39e",
+      template_id: "template_ck3l8ob",
+      user_id: "VMb3SEnvRjmbHhT_J",
+      template_params: {
+        email: email,
+      },
     };
-    return (
-        <div className="single-sidebar col-lg-12 col-md-6 col-12">
 
-            <div className="sidebar-subscribe">
-                <h4>Contact us for our upcoming awards </h4>
+    try {
+      const response = await fetch(
+        "https://api.emailjs.com/api/v1.0/email/send",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
+      console.log(response)
 
-                <div className="subscribe-form">
-                    <div id="mc_embed_signup_scroll">
-                        <label className="d-none">Subscribe to our mailing list</label>
-                        <input
-                            type="email"
-                            name="email"
 
-                            onChange={(e) => {
-                                setEmail(e.target.value)
-                            }}
-                            value={email}
-                            placeholder="Your email address"
-                            required
+      if (response.ok) {
+        setEmail("");
+        Swal.fire({
+          text: response.message || "Email sent successfully!",
+          icon: "success",
+        });
+      } else {
+        Swal.fire({
+          text:  "Failed to send email.",
+          icon: "error",
+        });
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      Swal.fire({
+        text: error.message || "An unexpected error occurred",
+        icon: "error",
+      });
+    }
+  };
 
-                        />
-
-                        <button className="button" onClick={handleSubmit}>submit</button>
-                    </div>
-                </div>
-            </div>
-
+  return (
+    <div className="single-sidebar col-lg-12 col-md-6 col-12">
+      <div className="sidebar-subscribe">
+        <h4>Contact us for our upcoming awards</h4>
+        <div className="subscribe-form">
+          <form id="mc_embed_signup_scroll" onSubmit={handleSubmit}>
+            <label className="d-none">Subscribe to our mailing list</label>
+            <input
+              type="email"
+              name="email"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+              placeholder="Your email address"
+              required
+            />
+            <button className="button">Submit</button>
+          </form>
         </div>
-    )
+      </div>
+    </div>
+  );
 }

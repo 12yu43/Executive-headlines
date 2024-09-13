@@ -7,7 +7,7 @@ export default function FeaturedLeaders({ data }) {
     return (
         <div className="row ">
 
-            <div className="col-lg-8 col-12 mb-50">
+            <div className="col-lg-8 col-12 mb-50 d-flex">
 
 
                 <div className="post-block-wrapper">
@@ -40,7 +40,7 @@ export default function FeaturedLeaders({ data }) {
 
                             <div className="tab-pane fade show active" id="world-cat-1">
 
-                                <div className="row mt-1">
+                                <div className="row g-5 ">
 
                                     {data.map((item, index) => {
                                         if (index > 3) return null;
@@ -90,7 +90,7 @@ export default function FeaturedLeaders({ data }) {
                 <div className="row">
 
 
-                    <div className="single-sidebar col-12">
+                    <div className="single-sidebar col-12 d-flex">
 
 
                         <div className="sidebar-block-wrapper">
@@ -99,7 +99,7 @@ export default function FeaturedLeaders({ data }) {
                             <div className="head education-head">
 
 
-                                <h4 className="title">Leadership Profiles</h4>
+                                <h4 className="title my-1">Leadership Profiles</h4>
 
                             </div>
 

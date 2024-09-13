@@ -73,6 +73,7 @@ export default function Index() {
                 setEntertainmentMediaData(resp?.data?.news?.entertainment_media?.data);
                 setAwardsEventsData(resp?.data?.news?.awards_events?.data);
                 setLoader(false);
+                console.log(resp.data.video)
             }
         }
         catch (e) {
