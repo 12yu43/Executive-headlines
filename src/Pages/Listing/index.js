@@ -37,7 +37,7 @@ export default function Listing() {
 
         getData();
     }, [param?.slug, location.pathname]);
-   
+
     return (
         <>
             {loader ?
@@ -93,28 +93,34 @@ export default function Listing() {
                                                     </tr>
                                                 </thead>
                                                 <tbody >
-                                                    {data.map((item, index) => {
+                                                    {data.slice().reverse().map((item, index) => {
                                                         return (
                                                             <tr key={index}>
                                                                 <td width={"25%"}>
-                                                                    {item?.url === null ?
+                                                                    {item?.url === null ? (
                                                                         <Link className="text-primary">{item?.featured_company_name}</Link>
-                                                                        :
-                                                                        <Link className="text-primary" to={"/feature/" + item?.url}>{item?.featured_company_name}</Link>
-                                                                    }
+                                                                    ) : (
+                                                                        <Link className="text-primary" to={"/feature/" + item?.url}>
+                                                                            {item?.featured_company_name}
+                                                                        </Link>
+                                                                    )}
                                                                     <br />
-                                                                    <Link className="text-primary" to={"http://" + item?.featured_company_website} target={"_blank"}>{item?.featured_company_website}</Link>
+                                                                    <Link className="text-primary" to={"http://" + item?.featured_company_website} target={"_blank"}>
+                                                                        {item?.featured_company_website}
+                                                                    </Link>
                                                                 </td>
                                                                 <td width={"25%"}>
-                                                                    {item?.featured_people_name}<br />
+                                                                    {item?.featured_people_name}
+                                                                    <br />
                                                                     {item?.featured_people_position}
                                                                 </td>
                                                                 <td>
                                                                     {item?.featured_people_description}
                                                                 </td>
                                                             </tr>
-                                                        )
+                                                        );
                                                     })}
+
 
 
 

@@ -182,9 +182,10 @@ export default function Index() {
                                         item?.url
                                       }
                                     >
-                                      {item?.title?.length > 30
+                                       {item?.title}
+                                      {/* {item?.title?.length > 30
                                         ? item?.title?.substring(0, 30) + "..."
-                                        : item?.title}
+                                        : item?.title} */}
                                     </Link>
                                   </h2>
                                 </div>
