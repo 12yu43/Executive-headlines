@@ -3,6 +3,8 @@ import Swal from "sweetalert2";
 
 export default function Contact() {
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -13,9 +15,10 @@ export default function Contact() {
       user_id: "VMb3SEnvRjmbHhT_J",
       template_params: {
         email: email,
+        name: name,
+        message: message,
       },
     };
-
     try {
       const response = await fetch(
         "https://api.emailjs.com/api/v1.0/email/send",
@@ -27,8 +30,7 @@ export default function Contact() {
           body: JSON.stringify(data),
         }
       );
-      console.log(response)
-
+      console.log(response);
 
       if (response.ok) {
         setEmail("");
@@ -38,7 +40,7 @@ export default function Contact() {
         });
       } else {
         Swal.fire({
-          text:  "Failed to send email.",
+          text: "Failed to send email.",
           icon: "error",
         });
       }
@@ -55,10 +57,10 @@ export default function Contact() {
     <div className="single-sidebar col-lg-12 col-md-6 col-12">
       <div className="sidebar-subscribe">
         <h4>Contact us for our upcoming awards</h4>
-        <div className="subscribe-form">
+        <div className="subscribe-formsubscribe-form">
           <form id="mc_embed_signup_scroll" onSubmit={handleSubmit}>
-            <label className="d-none">Subscribe to our mailing list</label>
             <input
+              className="contactField"
               type="email"
               name="email"
               onChange={(e) => setEmail(e.target.value)}
@@ -66,7 +68,27 @@ export default function Contact() {
               placeholder="Your email address"
               required
             />
-            <button className="button">Submit</button>
+            <input
+              className="contactField"
+              type="text"
+              name="name"
+              onChange={(e) => setName(e.target.value)}
+              value={name}
+              placeholder="Your name"
+              required
+            />
+            <div class="mb-4">
+              <textarea
+                onChange={(e) => setMessage(e.target.value)}
+                className="contactTextBox"
+                placeholder="Your Message"
+                name=""
+                id=""
+                rows="3"
+              ></textarea>
+            </div>
+
+            <button className="messageBtn">Submit</button>
           </form>
         </div>
       </div>

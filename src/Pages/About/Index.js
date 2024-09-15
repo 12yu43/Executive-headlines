@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useLocation, useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { FetchApi } from '../../API/FetchApi';
 import { Endpoints } from '../../API/Endpoints';
 
@@ -11,52 +11,46 @@ import Footer from '../../Layout/Footer';
 
 export default function About() {
     const [data, setData] = useState("");
-    const [MagazineData, setMagazineData] = useState("");
     const [pageTitle, setPageTitle] = useState("");
-    const param = useParams();
     const location = useLocation();
     const [loader, setLoader] = useState(false);
     useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-        getData();
-    }, [location.pathname]);
 
-    const getData = async () => {
-        setLoader(true);
-        let type = "About Us";
-        if (location.pathname === "/about") {
-            type = "About Us";
-        }
-        if (location.pathname === "/reprint-permission") {
-            type = "Reprints and Permissions";
-        }
-        if (location.pathname === "/disclaimer") {
-            type = "Disclaimer";
-        }
-        if (location.pathname === "/contact-us") {
-            type = "Contact Us";
-        }
-        if (location.pathname === "/advertise") {
-            type = "Advertise";
-        }
-        if (location.pathname === "/privacy-policy") {
-            type = "Privacy Policy";
-        }
+        const getData = async () => {
+            setLoader(true);
+            let type = "About Us";
+            if (location.pathname === "/about") {
+                type = "About Us";
+            } else if (location.pathname === "/reprint-permission") {
+                type = "Reprints and Permissions";
+            } else if (location.pathname === "/disclaimer") {
+                type = "Disclaimer";
+            } else if (location.pathname === "/contact-us") {
+                type = "Contact Us";
+            } else if (location.pathname === "/advertise") {
+                type = "Advertise";
+            } else if (location.pathname === "/privacy-policy") {
+                type = "Privacy Policy";
+            }
 
-        setPageTitle(type);
-        try {
-            let resp = await FetchApi(Endpoints.GetAbout + "/" + type);
-            if (resp && resp.status === true) {
-                setData(resp.data);
+            setPageTitle(type);
+            try {
+                let resp = await FetchApi(Endpoints.GetAbout + "/" + type);
+                if (resp && resp.status === true) {
+                    setData(resp.data);
+                }
+            } catch (e) {
+                if (e && e.response && e.response.data && e.response.data.message) {
+                    console.log(e.response.data.message);
+                }
+            } finally {
                 setLoader(false);
             }
-        }
-        catch (e) {
-            if (e && e.response && e.response.data && e.response.data.message) {
-                console.log(e.response.data.message)
-            }
-        }
-    }
+        };
+
+        getData();
+    }, [location.pathname]);
 
     return (
         <>

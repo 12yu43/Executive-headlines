@@ -2057,7 +2057,7 @@ blockquote.blockquote.blockquote-bg p {
   width: 210px;
   border: none;
   background-color: transparent;
-  
+
   color: #052d47;
   letter-spacing: 0.5px;
   font-size: 15px;
@@ -2066,7 +2066,7 @@ blockquote.blockquote.blockquote-bg p {
   min-height: 38px;
 }
 .header-search .header-search-form form input[type="text"]::placeholder {
- color: #797979;
+  color: #797979;
   font-size: 15px;
 }
 .header-search.header-search-2 {
@@ -5126,7 +5126,7 @@ blockquote.blockquote.blockquote-bg p {
   z-index: 1;
   text-align: center;
   background-color: #f6f6f6;
-  padding: 47px 30px;
+  padding: 40px 30px;
   /*-- Sidebar Subscribe Form --*/
 }
 .sidebar-subscribe::before {
@@ -5151,7 +5151,21 @@ blockquote.blockquote.blockquote-bg p {
 .sidebar-subscribe h4 span {
   color: #f05555;
 }
-.sidebar-subscribe .subscribe-form input[type="email"] {
+.sidebar-subscribe .subscribe-form  input[type="email"]{
+   width: 265px;
+  height: 40px;
+  background-color: #ffffff;
+  color: #444444;
+  line-height: 24px;
+  padding: 8px 20px;
+  font-size: 12px;
+  border: none;
+  clear: both;
+  margin: auto;
+  max-width: 100%;
+  margin-bottom: 8px;
+}
+.contactField {
   width: 265px;
   height: 40px;
   background-color: #ffffff;
@@ -5163,6 +5177,32 @@ blockquote.blockquote.blockquote-bg p {
   clear: both;
   margin: auto;
   max-width: 100%;
+  margin-bottom: 8px;
+}
+.contactTextBox {
+  width: 265px;
+  color: #444444;
+  background-color: #ffffff;
+  line-height: 24px;
+  padding: 8px 20px;
+  font-size: 12px;
+  border: none;
+  margin: auto;
+  resize: none;
+}
+.messageBtn{
+  height: 40px;
+  background-color: #f05555;
+  color: #ffffff;
+  line-height: 24px;
+  padding: 8px 40px;
+  border: none;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  clear: both;
+  margin: auto;
+  text-transform: uppercase;
 }
 .sidebar-subscribe .subscribe-form .button {
   height: 40px;

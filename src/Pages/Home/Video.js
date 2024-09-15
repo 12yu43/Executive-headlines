@@ -39,7 +39,7 @@ export default function Video() {
                 },
               }}
               autoplay={{
-                delay: 2500,
+                delay: 5000,
                 disableOnInteraction: true,
               }}
               loop={true}

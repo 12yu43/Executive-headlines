@@ -81,7 +81,7 @@ export default function LeaderSpeaks({ Data }) {
                                                       class="rounded-circle "
                                                       width="75"
                                                       height="75"
-                                                    />
+                                                      alt="" />
                                                   </div>
                                                 </div>
                                                 <div class="text-center mt-4">

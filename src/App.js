@@ -1,9 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Index from "./Pages/Home/Index";
-import Footer from "./Layout/Footer";
-import Header from "./Layout/Header";
 import Technology from "./Pages/Technology";
 import StartupInsights from "./Pages/StartupInsights";
 import LeaderSpeaks from "./Pages/LeaderSpeaks";
@@ -17,8 +15,8 @@ import News from "./Pages/News";
 import About from "./Pages/About/Index";
 import Listing from "./Pages/Listing";
 import Video from "./Pages/Video";
-import { RotatingLines } from 'react-loader-spinner';
-const $ = window.jQuery;
+
+// const $ = window.jQuery;
 
 
 function App() {

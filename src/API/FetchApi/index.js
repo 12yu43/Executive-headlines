@@ -19,11 +19,11 @@ export const FetchApi = (endpoint,options=false,data,loader=false) =>{
        
         try{
             let resp = await axios(configs);
-            if(resp && resp.data.status==401){
+            if(resp && resp.data.status===401){
                 console.log('Session Expired! Please login again.');
                 return;
             }
-            if(resp.data.status==210){
+            if(resp.data.status===210){
                 if(resp.data.message){
                     console.log(resp.data.message);
                 }
@@ -41,9 +41,9 @@ export const FetchApi = (endpoint,options=false,data,loader=false) =>{
             }
         }
         catch(e){
-            if(e.response && e.response.status==401){
+            if(e.response && e.response.status===401){
             }
-            if(e.response && e.response.status==500){
+            if(e.response && e.response.status === 500){
                 console.log('Server Error. Please Try after Some Time')
             }
             reject(e);

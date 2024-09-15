@@ -8,7 +8,7 @@ export default function Banner({ Data, index }) {
     return (
         <div className="row mb-50 " key={index}>
             {Data.map((item, ind) => {
-                if (parseInt(index) != parseInt(ind)) return null;
+                if (parseInt(index) !== parseInt(ind)) return null;
                 return (
                     <div className="col-12" key={ind}>
 

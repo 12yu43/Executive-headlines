@@ -1,5 +1,4 @@
 import axios from "axios"
-import ToastMessage from "../../Utils/ToastMessage"
 import { Endpoints } from "../Endpoints"
 
 export const CommonAPi=(endpoint, data, option=false)=>{
@@ -17,18 +16,18 @@ export const CommonAPi=(endpoint, data, option=false)=>{
                 data : data ? data : null,
                 method : data ? "POST" : "GET"
             })
-            if(resp && resp.data.status==401){
+            if(resp && resp.data.status===401){
                 console.log('Session Expired! Please login again.');
                 return;
             }
-            if(resp.data.status==210){
+            if(resp.data.status===210){
                 if(resp.data.message){
                     console.log(resp.data.message);
                 }
                 else if(resp.data.errors && typeof(resp.data.errors)=="string"){
                     console.log(resp.data.errors);
                 }
-                else if(typeof(resp.data.errors)=="object"){
+                else if(typeof(resp.data.errors)==="object"){
                     console.log(resp.data.errors.errorCode);
                 }
                 reject(resp.data);
@@ -40,7 +39,7 @@ export const CommonAPi=(endpoint, data, option=false)=>{
             }
         }
         catch(e){
-            if(e.response && e.response.status==401){
+            if(e.response && e.response.status===401){
             }
             reject(e);
         }

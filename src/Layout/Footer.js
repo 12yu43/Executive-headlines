@@ -71,6 +71,7 @@ function Footer() {
                     href="https://www.facebook.com/executiveheadlinesmagazine/"
                     className="facebook"
                     target={"_blank"}
+                    rel="noreferrer"
                   >
                     <i className="fa fa-facebook"></i>
                   </a>
@@ -79,6 +80,7 @@ function Footer() {
                     href="https://www.instagram.com/theexecutiveheadlines/"
                     className="dribbble"
                     target={"_blank"}
+                    rel="noreferrer"
                   >
                     <i className="fa fa-instagram"></i>
                   </a>
@@ -87,6 +89,7 @@ function Footer() {
                     href="https://www.linkedin.com/company/the-executive-headlines/?viewAsMember=true"
                     className="google-plus"
                     target={"_blank"}
+                    rel="noreferrer"
                   >
                     <i className="fa fa-linkedin"></i>
                   </a>
@@ -95,6 +98,7 @@ function Footer() {
                     href="https://www.youtube.com/channel/UCK490L6vb8-9LSXpqzYSLjA"
                     className="facebook"
                     target={"_blank"}
+                    rel="noreferrer"
                   >
                     <i className="fa fa-youtube"></i>
                   </a>
@@ -103,6 +107,7 @@ function Footer() {
                     href="https://in.pinterest.com/theexecutiveheadlines/_created/"
                     className="twitter"
                     target={"_blank"}
+                    rel="noreferrer"
                   >
                     <i className="fa fa-pinterest"></i>
                   </a>
@@ -111,6 +116,7 @@ function Footer() {
                     href="https://twitter.com/i/flow/login?redirect_after_login=%2FTEHeadlines"
                     className="twitter-white"
                     target={"_blank"}
+                    rel="noreferrer"
                   >
                     <img
                       src="../img/twitter.png"

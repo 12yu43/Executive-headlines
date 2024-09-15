@@ -19,7 +19,7 @@ export default function Sport({ pageType, data, category }) {
                                 {index === 0 ?
                                     <div className="post sports-post post-separator-border">
                                         <div className="post-wrap">
-                                            <a className="image" to={category + "/" + item?.url}><img src={Endpoints.ImageUrl + item?.images} alt={item?.image_alt} /></a>
+                                            <Link className="image" to={category + "/" + item?.url}><img src={Endpoints.ImageUrl + item?.images} alt={item?.image_alt} /></Link>
                                             <div className="content">
                                                 <h5 className="title"><Link to={category + "/" +  item?.url}>{item.title.length > 50 ? item.title.substring(0, 50) + "..." : item.title}</Link></h5>
 

@@ -78,8 +78,8 @@ function Header() {
             </div>
           </div>
         </div>
-        <div className="menu-section section bg-dark">
-          <div className="px-2 ml-3">
+        <div className="menu-section section bg-dark ">
+          <div className="px-2">
             <div className="row">
               <div className="col-12">
                 <div className="menu-section-wrap">

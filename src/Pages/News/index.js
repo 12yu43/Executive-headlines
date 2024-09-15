@@ -10,6 +10,7 @@ import { Helmet } from "react-helmet";
 import Header from '../../Layout/Header';
 import Footer from '../../Layout/Footer';
 import Loader from '../Loader/Index';
+
 export default function News() {
     const param = useParams();
     const location = useLocation();

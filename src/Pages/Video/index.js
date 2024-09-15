@@ -11,7 +11,6 @@ import Loader from '../Loader/Index';
 export default function Video() {
 
     const [data, setData] = useState([]);
-    const [link, setLink] = useState([]);
     const [loader, setLoader] = useState(false);
     const param = useParams();
     const location = useLocation();
@@ -76,7 +75,7 @@ export default function Video() {
                                         <div className="col-md-3" key={index}>
                                             <div className="post post-overlay gadgets-post w-100 bg-dark">
                                                 <div className="post-wrap ">
-                                                    <a href={Endpoints.ImageUrl + item?.video} class="image video-popup" target={"_blank"}>
+                                                    <a href={Endpoints.ImageUrl + item?.video} class="image video-popup" target={"_blank"} rel="noreferrer">
                                                         <video width="270" height="250" src={Endpoints.ImageUrl + item?.video}>
 
                                                         </video>

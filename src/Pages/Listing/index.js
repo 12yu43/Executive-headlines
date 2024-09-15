@@ -17,26 +17,27 @@ export default function Listing() {
 
     useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-        getData();
-    }, [param?.slug, location.pathname]);
 
-    const getData = async () => {
-        setLoader(true);
-        try {
-            let resp = await FetchApi(Endpoints.GetListing + "/" + param?.slug);
-            if (resp && resp.status === true) {
-                setData(resp.data?.featuredpeople);
-                setMagazineData(resp.data?.magazin);
+        const getData = async () => {
+            setLoader(true);
+            try {
+                let resp = await FetchApi(Endpoints.GetListing + "/" + param?.slug);
+                if (resp && resp.status === true) {
+                    setData(resp.data?.featuredpeople);
+                    setMagazineData(resp.data?.magazin);
+                }
+            } catch (e) {
+                if (e && e.response && e.response.data && e.response.data.message) {
+                    console.log(e.response.data.message);
+                }
+            } finally {
                 setLoader(false);
             }
-        }
-        catch (e) {
-            if (e && e.response && e.response.data && e.response.data.message) {
-                console.log(e.response.data.message)
-            }
-        }
-    }
+        };
 
+        getData();
+    }, [param?.slug, location.pathname]);
+   
     return (
         <>
             {loader ?
