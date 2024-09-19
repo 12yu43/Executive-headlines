@@ -13,7 +13,7 @@ export default function Sport({ pageType, data, category }) {
                 </div>
                 <div className="body">
                     {data.map((item, index) => {
-                        if (index > 3) return null;
+                        if (index > 5) return null;
                         return (
                             <>
                                 {index === 0 ?
@@ -23,7 +23,7 @@ export default function Sport({ pageType, data, category }) {
                                             <div className="content">
                                                 <h5 className="title"><Link to={category + "/" +  item?.url}>{item.title.length > 50 ? item.title.substring(0, 50) + "..." : item.title}</Link></h5>
 
-                                                <p>{item.meta_description.length > 150 ? item.meta_description.substring(0, 150) + "..." : item.meta_description}</p>
+                                                <p>{item.meta_description.length > 40 ? item.meta_description.substring(0, 40) + "..." : item.meta_description}</p>
                                             </div>
                                         </div>
                                     </div>

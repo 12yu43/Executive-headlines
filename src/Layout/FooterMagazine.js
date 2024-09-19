@@ -27,7 +27,7 @@ export default function FooterMagazine() {
     };
 
     return (
-        <div className="footer-widget col-xl-5 col-md-12 col-12 mt-50">
+        <div className="footer-widget col-xl-5 col-md-12 col-12 mt-45">
             <h3 className="text-white" style={{ fontWeight: 'bold' }}>Latest Magazine</h3>
             <div className="d-flex ">
                 {magazineData.map((item, index) => {

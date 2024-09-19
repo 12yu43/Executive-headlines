@@ -133,48 +133,49 @@ function Footer() {
                 </div>
               </div>
             </div>
-            <div className="footer-widget col-xl-2 col-md-12 col-12 mt-50">
-              <h3 className="text-white">Quick Links</h3>
+            <div className="footer-widget col-xl-2 col-md-12 col-12 mt-45">
+              <h3 className="text-white" style={{ fontWeight: 'bold' }}>Quick Links</h3>
               <ul className="header-links header-links-2 text-white">
                 <li>
-                  <Link to="/about-us" className="mt-3">
+                  <Link to="/about-us" className="mt-3 ">
                     {" "}
-                    About Us
+                    <strong>About Us</strong>
                   </Link>
                 </li>
                 <li>
                   <Link to="/contact-us" className="mt-3">
                     {" "}
-                    Contact Us
+                    <strong>Contact Us</strong>
                   </Link>
                 </li>
                 <li>
                   <Link to="/reprint-permission" className="mt-3">
                     {" "}
-                    Reprint & Permission
+                     <strong>Reprint & Permission</strong>
                   </Link>
                 </li>
                 <li>
                   <Link to="/disclaimer" className="mt-3">
                     {" "}
-                    Disclaimer
+                    <strong>Disclaimer</strong>
                   </Link>
                 </li>
                 <li>
                   <Link to="/privacy-policy" className="mt-3">
                     {" "}
-                    Privacy Policy
+                     <strong>Privacy Policy</strong>
                   </Link>
                 </li>
                 <li>
                   <Link to="/advertise" className="mt-3">
                     {" "}
-                    Advertise
+                    <strong>Advertise</strong>
                   </Link>
                 </li>
               </ul>
             </div>
 
+            
             <FooterMagazine />
           </div>
         </div>

@@ -107,7 +107,7 @@ export default function Index() {
             <div className="container-fluid p-0">
               <div className="row">
                 <div className="col">
-                  <div className="d-flex">
+                <div className="d-lg-flex">
                     <Swiper
                       slidesPerView={1}
                       spaceBetween={0}
