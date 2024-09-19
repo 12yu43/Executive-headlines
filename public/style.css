@@ -3482,6 +3482,7 @@ blockquote.blockquote.blockquote-bg p {
 }
 .post.post-overlay .post-wrap .image {
   margin-bottom: 0;
+  width: 100%;
 }
 .post.post-overlay .post-wrap .image::before {
   position: absolute;
@@ -3494,6 +3495,8 @@ blockquote.blockquote.blockquote-bg p {
   z-index: 2;
   opacity: 0.3;
 }
+
+
 .post.post-overlay .post-wrap .video-btn {
   width: 50px;
   height: 50px;

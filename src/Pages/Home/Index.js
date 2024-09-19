@@ -107,7 +107,7 @@ export default function Index() {
             <div className="container-fluid p-0">
               <div className="row">
                 <div className="col">
-                <div className="d-lg-flex">
+                  <div className="d-lg-flex">
                     <Swiper
                       slidesPerView={1}
                       spaceBetween={0}
@@ -137,36 +137,35 @@ export default function Index() {
                       {techonologyData.map((item, index) => {
                         if (index > 1) return null;
                         return (
-                          <SwiperSlide
-                              // className="col-lg-4 col-md-6 col-12"
-                            key={index}
-                          >
+                          <SwiperSlide key={index}>
                             <div className="post post-large post-overlay hero-post">
                               <div className="post-wrap">
-                                <div className="image">
-                                  <Image
-                                    Image={Endpoints.ImageUrl + item?.images}
-                                      // width={"498px"}
-                                    width={"100%"}
-                                    height={"400px"}
-                                    ImageAlt={item?.image_alt}
-                                  />
-                                  {/* <img src={Endpoints.ImageUrl +  item?.images} alt={item?.image_alt} height="436px"/> */}
-                                </div>
+                                {/* Wrap the Image inside Link to make it clickable */}
+                                <Link
+                                  to={
+                                    item?.cat_slug
+                                      .replace(/\s+/g, "-")
+                                      .toLowerCase() + "/" + item?.url
+                                  }
+                                >
+                                  <div className="image">
+                                    <Image
+                                      Image={Endpoints.ImageUrl + item?.images}
+                                      width={"100%"}
+                                      //  width={"498px"}
+                                      height={"400px"}
+                                      ImageAlt={item?.image_alt}
+                                    />
+                                  </div>
+                                </Link>
 
                                 <Link
                                   to={
                                     item?.cat_slug
                                       .replace(/\s+/g, "-")
-                                      .toLowerCase() +
-                                    "/" +
-                                    item?.url
+                                      .toLowerCase() + "/" + item?.url
                                   }
-                                  className={
-                                    index === 0
-                                      ? "category politic"
-                                      : "category fashion"
-                                  }
+                                  className={index === 0 ? "category politic" : "category fashion"}
                                 >
                                   Technology
                                 </Link>
@@ -177,15 +176,10 @@ export default function Index() {
                                       to={
                                         item?.cat_slug
                                           .replace(/\s+/g, "-")
-                                          .toLowerCase() +
-                                        "/" +
-                                        item?.url
+                                          .toLowerCase() + "/" + item?.url
                                       }
                                     >
-                                       {item?.title}
-                                      {/* {item?.title?.length > 30
-                                        ? item?.title?.substring(0, 30) + "..."
-                                        : item?.title} */}
+                                      {item?.title}
                                     </Link>
                                   </h2>
                                 </div>
@@ -194,37 +188,45 @@ export default function Index() {
                           </SwiperSlide>
                         );
                       })}
+
                     </Swiper>
                     <div className="order-lg-2 col-lg-4 col-12">
+                      {/* Mapping Industries Data */}
                       {IndustriesData.map((item, index) => {
                         if (index > 0) return null;
                         return (
-                          <div
-                            className="post post-overlay hero-post"
-                            key={index}
-                          >
+                          <div className="post post-overlay hero-post" key={index}>
                             <div className="post-wrap">
-                              <Image
-                                Image={Endpoints.ImageUrl + item?.images}
-                                width={"100%"}
-                                height={"200px"}
-                                ImageAlt={item?.image_alt}
-                              />
-                              {/* <img src={Endpoints.ImageUrl +  item?.images} alt={item?.image_alt} style={{ minHeight: "232px", maxHeight: "232px" }} /> */}
-
+                              {/* Wrap Image with Link to make it clickable */}
                               <Link
                                 to={
                                   item?.cat_slug
                                     .replace(/&/g, "")
                                     .replace(/\s+/g, "-")
-                                    .toLowerCase() +
-                                  "/" +
-                                  item?.url
+                                    .toLowerCase() + "/" + item?.url
+                                }
+                              >
+                                <Image
+                                  Image={Endpoints.ImageUrl + item?.images}
+                                  width={"100%"}
+                                  height={"200px"}
+                                  ImageAlt={item?.image_alt}
+                                />
+                              </Link>
+
+                              {/* Category Link */}
+                              <Link
+                                to={
+                                  item?.cat_slug
+                                    .replace(/&/g, "")
+                                    .replace(/\s+/g, "-")
+                                    .toLowerCase() + "/" + item?.url
                                 }
                                 className="category sports"
                               >
                                 Industry
                               </Link>
+
                               <div className="content">
                                 <h2 className="title">
                                   <Link
@@ -232,13 +234,11 @@ export default function Index() {
                                       item?.cat_slug
                                         .replace(/&/g, "")
                                         .replace(/\s+/g, "-")
-                                        .toLowerCase() +
-                                      "/" +
-                                      item?.url
+                                        .toLowerCase() + "/" + item?.url
                                     }
                                   >
                                     {item?.title?.length > 30
-                                      ? item?.title?.substring(0, 30) + "..."
+                                      ? item?.title.substring(0, 30) + "..."
                                       : item?.title}
                                   </Link>
                                 </h2>
@@ -247,7 +247,6 @@ export default function Index() {
                           </div>
                         );
                       })}
-
                       <div className="row row-1">
                         {BusinessNewsData.map((item, index) => {
                           if (index > 1) return null;
@@ -255,23 +254,22 @@ export default function Index() {
                             <div className="col-md-6 col-12" key={index}>
                               <div className="post post-overlay hero-post">
                                 <div className="post-wrap">
-                                  <div className="image">
-                                    <Image
-                                      Image={Endpoints.ImageUrl + item?.images}
-                                      width={"248px"}
-                                      height={"198px"}
-                                      ImageAlt={item?.image_alt}
-                                    />
-                                    {/* <img src={Endpoints.ImageUrl + item?.images} alt={item?.image_alt} /> */}
-                                  </div>
+                                  {/* Wrap the Image component inside the Link to make it clickable */}
+                                  <Link to={"/cxo/" + item?.url}>
+                                    <div className="image">
+                                      <Image
+                                        Image={Endpoints.ImageUrl + item?.images}
+                                        width={"248px"}
+                                        height={"198px"}
+                                        ImageAlt={item?.image_alt}
+                                      />
+                                    </div>
+                                  </Link>
 
+                                  {/* Category Link */}
                                   <Link
                                     to={"/cxo/" + item?.url}
-                                    className={
-                                      index === 0
-                                        ? "category gadgets"
-                                        : "category education"
-                                    }
+                                    className={index === 0 ? "category gadgets" : "category education"}
                                   >
                                     Business
                                   </Link>
@@ -286,7 +284,10 @@ export default function Index() {
                                     </h6>
 
                                     <div className="meta fix">
-                                      {/* <span className="meta-item date"><i className="fa fa-clock-o"></i>{moment(item?.created_at).format("DD MMM YYYY")}</span> */}
+                                      {/* You can uncomment and format the date if needed */}
+                                      {/* <span className="meta-item date">
+                  <i className="fa fa-clock-o"></i>{moment(item?.created_at).format("DD MMM YYYY")}
+                </span> */}
                                     </div>
                                   </div>
                                 </div>
@@ -295,6 +296,7 @@ export default function Index() {
                           );
                         })}
                       </div>
+
                     </div>
                   </div>
                 </div>
